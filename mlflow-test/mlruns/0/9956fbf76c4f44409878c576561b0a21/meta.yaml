@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/rachana/experiments/medical_imaging/chest_xray_end_to_end/mlflow-test/mlruns/0/9956fbf76c4f44409878c576561b0a21/artifacts
+end_time: 1713745753856
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 9956fbf76c4f44409878c576561b0a21
+run_name: burly-snipe-213
+run_uuid: 9956fbf76c4f44409878c576561b0a21
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713745752263
+status: 3
+tags: []
+user_id: rachana
