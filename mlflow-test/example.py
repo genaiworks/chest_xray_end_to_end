@@ -77,7 +77,9 @@ if __name__ == "__main__":
         # predictions = lr.predict(train_x)
         # signature = infer_signature(train_x, predictions)
 
-        remote_server_url ="https://dagshub.com/genaiworks/chest_xray_end_to_end.mlflow"
+        # remote_server_url ="https://dagshub.com/genaiworks/chest_xray_end_to_end.mlflow"
+
+        remote_server_url ="http://ec2-3-101-130-14.us-west-1.compute.amazonaws.com:5000"
         mlflow.set_tracking_uri(remote_server_url)
 
         tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme

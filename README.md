@@ -8,9 +8,54 @@ python script.py
 
 ```bash
 export MLFLOW_TRACKING_URI=https://dagshub.com/genaiworks/chest_xray_end_to_end.mlflow 
-export MLFLOW_TRACKING_USERNAME=genaiworks 
+export MLFLOW_TRACKING_USERNAME=XXXX
 export MLFLOW_TRACKING_PASSWORD=ec34733c1df0a2704cccff33c8adf2070636133f 
 ```
+
+ Login to AWS console.
+2. Create IAM user for deployment
+#with specific access
+
+1. EC2 access : It is virtual machine
+
+2. ECR: Elastic Container registry to save your docker image in aws
+
+
+#Description: About the deployment
+
+1. Build docker image of the source code
+
+2. Push your docker image to ECR
+
+3. Launch Your EC2 
+
+4. Pull Your image from ECR in EC2
+
+5. Lauch your docker image in EC2
+
+ Create IAM policy Policy:
+1. AmazonEC2ContainerRegistryFullAccess
+2. AmazonEC2FullAccess
+
+1 Log into the EC2 instance and run following commands
+2  sudo apt update
+3  clear
+4  sudo apt install python3-pip
+5  sudo pip3 install pipenv
+6  sudo pip3 install virtualenv
+7  mkdir mlflow
+8  pipenv install mlflow
+9  pipenv install awscli
+10  pip install boto3
+11  pipenv install boto3
+
+   mlflow server -h 0.0.0.0 --default-artifact-root s3://mlflow-buc9
+
+   Start MLflow
+   http://ec2-3-191-150-14.us-west-1.compute.amazonaws.com:5000/
+
+export MLFLOW_TRACKING_URI=http://ec2-3-191-150-14.us-west-1.compute.amazonaws.com:5000
+
 
 GIT HUB SETUP
 
