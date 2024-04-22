@@ -74,8 +74,11 @@ if __name__ == "__main__":
         mlflow.log_metric("r2", r2)
         mlflow.log_metric("mae", mae)
 
-        predictions = lr.predict(train_x)
-        signature = infer_signature(train_x, predictions)
+        # predictions = lr.predict(train_x)
+        # signature = infer_signature(train_x, predictions)
+
+        remote_server_url ="https://dagshub.com/genaiworks/chest_xray_end_to_end.mlflow"
+        mlflow.set_tracking_uri(remote_server_url)
 
         tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
 
@@ -85,8 +88,12 @@ if __name__ == "__main__":
             # There are other ways to use the Model Registry, which depends on the use case,
             # please refer to the doc for more information:
             # https://mlflow.org/docs/latest/model-registry.html#api-workflow
+            # mlflow.sklearn.log_model(
+            #     lr, "model", registered_model_name="ElasticnetWineModel", signature=signature
+            # )
             mlflow.sklearn.log_model(
-                lr, "model", registered_model_name="ElasticnetWineModel", signature=signature
+                lr, "model", registered_model_name="ElasticnetWineModel"
             )
         else:
-            mlflow.sklearn.log_model(lr, "model", signature=signature)
+            # mlflow.sklearn.log_model(lr, "model", signature=signature)
+            mlflow.sklearn.log_model(lr, "model")
