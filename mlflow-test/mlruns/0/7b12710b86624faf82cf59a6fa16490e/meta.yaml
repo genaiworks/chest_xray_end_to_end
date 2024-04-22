@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/rachana/experiments/medical_imaging/chest_xray_end_to_end/mlflow-test/mlruns/0/7b12710b86624faf82cf59a6fa16490e/artifacts
+end_time: 1713753235202
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7b12710b86624faf82cf59a6fa16490e
+run_name: mercurial-grouse-78
+run_uuid: 7b12710b86624faf82cf59a6fa16490e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713753233682
+status: 3
+tags: []
+user_id: rachana
